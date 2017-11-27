@@ -69,5 +69,9 @@ class TestClassesHomework < Minitest::Test
     assert_equal(true, @team.check_players("Kris"))
     assert_equal(false, @team.check_players("Jason"))
   end
-  
+
+  def test_update_points
+    assert_equal(2, @team.points("win"))
+  end
+
 end

@@ -41,6 +41,7 @@ attr_accessor :team_name, :players, :coach
     @team_name = team_name
     @players = players
     @coach = coach
+    @points = 0
   end
   #
   # def team_name
@@ -69,6 +70,12 @@ def check_players(player_query)
   else
     return false
   end
+end
+
+def points(win_status)
+  @points += 2 if win_status == "win"
+  @points += 1 if win_status == "draw"
+  return @points
 end
 
 end
