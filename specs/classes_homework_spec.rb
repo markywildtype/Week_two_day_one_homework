@@ -4,8 +4,6 @@ require_relative "../classes_homework.rb"
 
 class TestClassesHomework < Minitest::Test
 
-
-
   def setup
     @student = Student.new("Mark", 18)
     @team = Team.new("E18", ["Mark", "Kris"], "Jimmy")
@@ -14,7 +12,6 @@ class TestClassesHomework < Minitest::Test
 
   def test_student
     student = Student.new("Mark",18)
-
   end
 
   def test_student_name
@@ -41,11 +38,10 @@ class TestClassesHomework < Minitest::Test
   end
 
   def test_favourite_language
-    # @student.favourite_language("Ruby")
     assert_equal("My favourite language is Ruby", @student.favourite_language("Ruby"))
   end
 
-
+#Part B
 
 
   def test_team_name
@@ -66,8 +62,12 @@ class TestClassesHomework < Minitest::Test
   end
 
   def test_add_player
-
     assert_equal(["Mark", "Kris", "Hamish"], @team.add_player("Hamish"))
   end
 
+  def test_check_player
+    assert_equal(true, @team.check_players("Kris"))
+    assert_equal(false, @team.check_players("Jason"))
+  end
+  
 end

@@ -29,10 +29,9 @@ class Student
     return "My favourite language is #{language}"
   end
 
-
-
 end
 
+#Part B
 
 class Team
 
@@ -62,11 +61,14 @@ attr_accessor :team_name, :players, :coach
 
 def add_player(new_player_name)
   @players.push(new_player_name)
-
 end
 
-
-
-
+def check_players(player_query)
+  if @players.include?(player_query)
+    return true
+  else
+    return false
+  end
+end
 
 end
