@@ -82,12 +82,23 @@ end
 
 class Library
 
+  attr_accessor :books
+
   def initialize(books)
     @books = books
   end
 
   def list_books(library)
     return library
+  end
+
+  def book_information(book_title)
+    for book in @books
+      if book[:title] == book_title
+        return book
+        break
+      end
+    end
   end
 
 end

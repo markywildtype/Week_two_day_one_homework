@@ -109,4 +109,17 @@ class TestClassesHomework < Minitest::Test
     assert_equal(@library1, @library1.list_books(@library1))
   end
 
+  def test_book_information
+    # expected = {
+    # title: "American Gods",
+    # rental_details: {
+    #   student_name: "Clementine",
+    #   date: "3/12/17"
+    #   }
+    # }
+    expected = @library1.books()[3]
+    actual = @library1.book_information("American Gods")
+    assert_equal(expected, actual)
+  end
+
 end
