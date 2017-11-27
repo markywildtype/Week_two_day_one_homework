@@ -110,15 +110,14 @@ class TestClassesHomework < Minitest::Test
   end
 
   def test_book_information
-    # expected = {
-    # title: "American Gods",
-    # rental_details: {
-    #   student_name: "Clementine",
-    #   date: "3/12/17"
-    #   }
-    # }
     expected = @library1.books()[3]
     actual = @library1.book_information("American Gods")
+    assert_equal(expected, actual)
+  end
+
+  def test_rental_details
+    expected = @library1.books()[0][:rental_details]
+    actual = @library1.rental_details("Let The Right One In")
     assert_equal(expected, actual)
   end
 
