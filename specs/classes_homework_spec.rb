@@ -121,4 +121,10 @@ class TestClassesHomework < Minitest::Test
     assert_equal(expected, actual)
   end
 
+  def test_add_book
+    @library1.add_book("Catch 22")
+    actual = @library1.books().count
+    assert_equal(5, actual)
+  end
+
 end
