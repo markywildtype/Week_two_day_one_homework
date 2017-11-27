@@ -79,3 +79,15 @@ def points(win_status)
 end
 
 end
+
+class Library
+
+  def initialize(books)
+    @books = books
+  end
+
+  def list_books(library)
+    return library
+  end
+
+end

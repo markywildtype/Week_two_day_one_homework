@@ -7,6 +7,34 @@ class TestClassesHomework < Minitest::Test
   def setup
     @student = Student.new("Mark", 18)
     @team = Team.new("E18", ["Mark", "Kris"], "Jimmy")
+    @library1 = Library.new([{
+      title: "Let The Right One In",
+      rental_details: {
+        student_name: "Mark",
+        date: "23/12/17"
+        }
+      },
+      {
+      title: "It",
+      rental_details: {
+        student_name: "Brian",
+        date: "8/01/18"
+        }
+      },
+      {
+      title: "The Knife of Never Letting Go",
+      rental_details: {
+        student_name: "Jeremiah",
+        date: "14/02/18"
+        }
+      },
+      {
+      title: "American Gods",
+      rental_details: {
+        student_name: "Clementine",
+        date: "3/12/17"
+        }
+      }])
 
   end
 
@@ -71,7 +99,14 @@ class TestClassesHomework < Minitest::Test
   end
 
   def test_update_points
+    assert_equal(0, @team.points("lose"))
     assert_equal(2, @team.points("win"))
+  end
+
+#Extension
+
+  def test_list_books
+    assert_equal(@library1, @library1.list_books(@library1))
   end
 
 end
