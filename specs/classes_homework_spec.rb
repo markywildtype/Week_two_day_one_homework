@@ -127,4 +127,14 @@ class TestClassesHomework < Minitest::Test
     assert_equal(5, actual)
   end
 
+  def test_change_rental_details
+    @library1.change_rental_details("The Knife of Never Letting Go", "Claudia", "23/03/18")
+    expected = {
+      student_name: "Claudia",
+      date: "23/03/18"
+      }
+      actual = @library1.books()[2][:rental_details]
+    assert_equal(expected, actual)
+  end
+
 end
